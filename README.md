@@ -1,6 +1,6 @@
 # package_bash
 
-my bash scripts for managing packages
+my bash scripts for managing packages ( rhel8 )
 
 * devtools.dir (master branch)
     - devtools.down - download development tools from rhel8 
