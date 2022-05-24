@@ -3,4 +3,4 @@
 my bash scripts for managing packages
 
 * devtools.dir 
-    - download development tools from rhel8 
+    - devtools.down - download development tools from rhel8 
