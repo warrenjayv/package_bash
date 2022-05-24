@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# file
+DTLIST="devtools.list"
+
+# color
+_red="\033[1;31;40m"
+_slv="\033[0;37;40m"
+
+# ensure list exist 
+echo -e "$_red"
+if ! [[ -a $DTLIST ]]; then 
+  echo -e "'$DTLIST' not found.$_slv"; 
+	exit
+fi
+
+# trap sigint
+function trap_ctrlc() 
+{ 
+	echo -e "$_slv" 
+	exit 2
+}
+trap "trap_ctrlc" 2
+
+# iterate list & download 
+while read -r line
+do
+	dnf --downloadonly "$line"
+done < "$DTLIST"
+
+echo -e "$_slv"
